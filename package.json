@@ -24,6 +24,10 @@
     "electron-reload": "^2.0.0-alpha.1",
     "fs": "^0.0.1-security",
     "node-seal": "^5.0.0",
-    "promise-mysql": "^5.2.0"
+    "promise-mysql": "^5.2.0",
+    "sass": "^1.58.1"
+  },
+  "devDependencies": {
+    "node-sass": "^8.0.0"
   }
 }
