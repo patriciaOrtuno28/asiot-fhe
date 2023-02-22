@@ -9,6 +9,9 @@ const fhe = require('./fhe');
 /* -------------------------------------------------------------------------- */
 let window
 
+let encryptedHR = new Array(5)
+var counter = 0
+
 //const logo = nativeImage.createFromPath(__dirname + './ui/res/ID_LOGO.png');
 
 /* -------------------------------------------------------------------------- */
@@ -42,6 +45,22 @@ exports.generateSecretKeys = async () => {
     }
     return;
 }
+
+exports.encryptHR = async (newHR) => {
+    // Encrypt data
+    const newHREncrypted = await fhe.encryptNumber(newHR)
+    // Save it in the array
+    if (counter == 5) counter = 0
+    encryptedHR[counter] = newHREncrypted
+    counter++
+    // Return the array
+    return encryptedHR
+}   
+
+exports.computeAvgFuel = async (array) => {
+    return await fhe.computeAvgFuel(array)
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                                 Dialogs                                    */

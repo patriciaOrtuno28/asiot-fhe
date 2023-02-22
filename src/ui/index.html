@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body class="main-body">
     <main class="container-fluid">
         <div class="col mt-2">
-            <button class="btn btn-primary" id="generate-keys"> <i class="fa fa-key"></i> </button>
+            <button class="btn btn-secondary" id="generate-keys"> <i class="fa fa-key"></i> </button>
             <span class="m-1" id="generation-info"></span>
         </div>
 
         <div class="container">
             <div class="row">
-              <div class="col-md-10 col-sm-12">PATIENT ID #1888450</div>
-              <div class="col-md-2 col-sm-12">12/04/18 20:15</div>
+              <div class="col-md-10 col-sm-12 patient-id">PATIENT ID #1888450</div>
+              <div class="col-md-2 col-sm-12 date">12/04/18 20:15</div>
             </div>
         </div>
           
@@ -35,8 +35,14 @@
                     <div class="cell cell-6"></div>
                 </div>
                 <div class="col-md-2 col-sm-12">
-                    <div class="number-1"><span>&#9829;</span></div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12 d-flex align-items-center">
+                            <div class="number-1 mr-2"><span>&#9829;</span></div>
+                            <span class="number-2" id="lbl_heartrate">-</span>
+                        </div>
+                    </div>                    
                 </div>
+                <div id="avg-hrs"></div>
             </div>
         </div> 
               
@@ -58,6 +64,8 @@
                 </filter>
             </defs>
         </svg>
+
+        <div id="array-hrs"></div>
 
     </main>
 

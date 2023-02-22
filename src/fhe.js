@@ -322,3 +322,53 @@ exports.decryptNumber = async (enc) => {
     // Return
     return decoded[0];
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                   Average                                  */
+/* -------------------------------------------------------------------------- */
+exports.computeAvgFuel = async (array) => {
+    // Init SEAL
+    let seal = await SEAL();
+    // Scheme Type
+    const schemeType = seal.SchemeType.ckks;
+    // Parms
+    const parms = seal.EncryptionParameters(schemeType);
+    // PolyModulus Degree
+    parms.setPolyModulusDegree(polyModulusDegreeNumeric);
+    // Coefficient Modulus Primes
+    parms.setCoeffModulus(
+        seal.CoeffModulus.Create(
+            polyModulusDegreeNumeric, 
+            Int32Array.from(bitSizesNumeric))
+    );
+    // Context
+    let context = seal.Context(
+        parms, // Encryption Parameters
+        true, // ExpandModChain
+        seal.SecurityLevel.tc128 // Enforce a security level
+    );
+
+    // Homomorphic evaluator
+    const evaluator = seal.Evaluator(context);
+
+    // Iterate through the json
+    let encryptedArray = [];
+    array.forEach(encHR => {
+        const uploadedCipherText = seal.CipherText();
+        try {
+            uploadedCipherText.load(context, encHR);
+        }
+        catch (err) { console.log(err) }
+        encryptedArray.push(uploadedCipherText);
+    });
+
+    var cipherTextAvg = null;
+    cipherTextAvg = evaluator.add(encryptedArray[0], encryptedArray[1]);
+    for (let i = 2; i < array.length; i++) {
+        evaluator.add(encryptedArray[i], cipherTextAvg, cipherTextAvg);
+    }
+
+    if (cipherTextAvg != null) {
+        return cipherTextAvg.save();
+    } else { return null }
+}
