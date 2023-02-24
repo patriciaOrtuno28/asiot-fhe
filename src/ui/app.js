@@ -31,7 +31,7 @@ genKeys.addEventListener('click', async () => {
 
 const computeAvg = async (array) => {
     // Obtain the encrypted sum
-    const sumEncrypted = await main.computeAvgFuel(array);
+    const sumEncrypted = await main.computeAvgHR(array);
 
     if (sumEncrypted != null) {
         // Decrypt data

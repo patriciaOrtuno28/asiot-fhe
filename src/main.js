@@ -57,8 +57,8 @@ exports.encryptHR = async (newHR) => {
     return encryptedHR
 }   
 
-exports.computeAvgFuel = async (array) => {
-    return await fhe.computeAvgFuel(array)
+exports.computeAvgHR = async (array) => {
+    return await fhe.computeAvgHR(array)
 }
 
 
