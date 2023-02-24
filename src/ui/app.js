@@ -37,8 +37,8 @@ const computeAvg = async (array) => {
         // Decrypt data
         const quantity = 5;
         const decryptedSum = await fhe.decryptNumber(sumEncrypted);
-        const avgFuel = decryptedSum / quantity;
-        avgLbl.innerText = "Average: " + avgFuel.toFixed(3) + " (ppm)" 
+        const avgHR = decryptedSum / quantity;
+        avgLbl.innerText = "Average: " + Math.round(avgHR) + " (ppm)" 
     }
 }
 
@@ -48,18 +48,20 @@ const computeAvg = async (array) => {
 /* -------------------------------------------------------------------------- */
 const renderHRs = async (arrayHR) => {
     hrsList.innerHTML = '';
+    let counter = 1;
     arrayHR.forEach(async (hr) => {
         const card = document.createElement('div');
-        card.classList.add('card', 'card-body', 'animate__animated', 'animate__fadeInRight', 'hr-card');
+        card.classList.add('card', 'card-body', 'animate__animated', 'animate__fadeIn', 'hr-card');
         card.innerHTML = `
             <div class="col d-flex align-items-center">
-                <span class="title-hr"> Encrypted HR:   </span>
+                <span class="title-hr"> Encrypted Heart rate [${counter}]: &nbsp;&nbsp;</span>
                 <span> ${hr.substring(0,100)} ... </span>
             </div>
         `;
 
         // Append card to the list
         hrsList.appendChild(card);
+        counter++;
     })
 }
 
