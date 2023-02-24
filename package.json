@@ -19,15 +19,9 @@
   "homepage": "https://github.com/patriciaOrtuno28/asiot-fhe#readme",
   "dependencies": {
     "animate.css": "^4.1.1",
-    "axios": "^0.26.1",
     "electron": "^8.2.1",
     "electron-reload": "^2.0.0-alpha.1",
     "fs": "^0.0.1-security",
-    "node-seal": "^5.0.0",
-    "promise-mysql": "^5.2.0",
-    "sass": "^1.58.1"
-  },
-  "devDependencies": {
-    "node-sass": "^8.0.0"
+    "node-seal": "^5.0.0"
   }
 }

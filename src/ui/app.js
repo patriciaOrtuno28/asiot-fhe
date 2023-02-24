@@ -80,7 +80,7 @@ const init = () => {
             await computeAvg(encryptedHR)
         }
 
-    }, 4000)
+    }, 8000)
 }
 
 init();
