@@ -1,0 +1,27 @@
+{
+  "name": "asiot-fhe",
+  "version": "1.0.0",
+  "description": "Práctica de la asignatura ASIOT del MUIRST - UPM / 2023",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron . --max-old-space-size=8192"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patriciaOrtuno28/asiot-fhe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patriciaOrtuno28/asiot-fhe/issues"
+  },
+  "homepage": "https://github.com/patriciaOrtuno28/asiot-fhe#readme",
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "electron": "^8.2.1",
+    "electron-reload": "^2.0.0-alpha.1",
+    "fs": "^0.0.1-security",
+    "node-seal": "^5.0.0"
+  }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.min.css"/>
+    <link rel="stylesheet" href="./app.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="main-body">
+    <main class="container-fluid">
+        <div class="col mt-2">
+            <button class="btn btn-secondary" id="generate-keys"> <i class="fa fa-key"></i> </button>
+            <span class="m-1" id="generation-info"></span>
+        </div>
+
+        <div class="container">
+            <div class="row">
+              <div class="col-md-10 col-sm-12 patient-id">PATIENT ID #1888450</div>
+              <div class="col-md-2 col-sm-12 date">12/04/18 20:15</div>
+            </div>
+        </div>
+          
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-sm-12 graph">
+                    <div class="cell cell-1"></div>
+                    <div class="cell cell-2"></div>
+                    <div class="cell cell-3"></div>
+                    <div class="cell cell-4"></div>
+                    <div class="cell cell-5"></div>
+                    <div class="cell cell-6"></div>
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12 d-flex align-items-center">
+                            <div class="number-1 mr-2"><span>&#9829;</span></div>
+                            <span class="number-2" id="lbl_heartrate">-</span>
+                        </div>
+                    </div>                    
+                </div>
+                <div id="avg-hrs">Average: -</div>
+            </div>
+        </div> 
+              
+        <svg width="0" height="0" class="filters">
+            <defs>
+                <filter id="filter0_dd" x="0.858887" y="28.9809" width="644.262" height="124.108" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.215686 0 0 0 0 0.686275 0 0 0 0 0.54902 0 0 0 1 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="4"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.215686 0 0 0 0 0.686275 0 0 0 0 0.54902 0 0 0 1 0"/>
+                <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
+                </filter>
+            </defs>
+        </svg>
+
+        <div id="array-hrs"></div>
+
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+</html>

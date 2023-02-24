@@ -1,0 +1,130 @@
+.main-body {
+  background-color: #231f20;
+}
+
+.patient-id {
+  color: #999697;
+}
+
+.date {
+  color: #999697;
+}
+
+#avg-hrs {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  color: #999697;
+  font-size: 1.5rem;
+}
+
+.title-hr {
+  font-weight: bold;
+}
+
+.hr-card {
+  background-color: #c2c0c151;
+  color: #e3e0e1;
+  padding: 1em;
+}
+
+.number-1 {
+  font-size: 6rem;
+  text-align: center;
+  width: 6rem;
+  position: relative; }
+  .number-1 span {
+    font-size: 2rem;
+    position: relative;
+    top: -2rem;
+    left: -5rem;
+    opacity: 1;
+    animation: beat 1s infinite; }
+
+.number-2 {
+  font-size: 6.5rem;
+  text-align: center;
+  color: #999697;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto; }
+
+.graph {
+  /* the green gradient */
+  outline: 1px #37af8c solid;
+  box-shadow: 0 0 4px #37af8c;
+  padding: 0;
+  background: linear-gradient(90deg, #231f20 0, #37af8c 50%, #231f20 50%);
+  animation: travel 6s infinite linear;
+  display: flex;
+  background-size: 100% auto;
+  background-position: -380px 0;
+  height: 200px; }
+
+.cell {
+  margin: 0;
+  display: flex;
+  width: 16.7%;
+  height: 100%;
+  background: url(https://gistcdn.githack.com/alexmwalker/0993e72c768ddcb45c1b1e41d3ffaffe/raw/ac804d1a4153c6a7595a9778626005feb34098a8/hr.svg);
+  /* this SVG doesn't have the numbers */
+  background: url(https://gistcdn.githack.com/alexmwalker/ab0ffcafbeed4f91756a06531c5cba1d/raw/13a6b6d3b69316a8064f26dd9d341451c34f6bff/hr-with-numbers.svg);
+  background-size: 700% auto;
+  animation: shuffle 36s steps(1) infinite; }
+
+.cell-1 {
+  background-position: 0, 0;
+  animation-delay: -2s; }
+
+.cell-2 {
+  background-position: 16.6%, 0;
+  animation-delay: -13s; }
+
+.cell-3 {
+  background-position: 33.3%, 0;
+  animation-delay: -30s; }
+
+.cell-4 {
+  background-position: 50%, 0;
+  animation-delay: -5s; }
+
+.cell-5 {
+  background-position: 66.6%, 0;
+  animation-delay: -22s; }
+
+.cell-6 {
+  background-position: 83.3%, 0;
+  animation-delay: -9s; }
+
+@keyframes shuffle {
+  0% {
+    background-position: 83.3%, 0; }
+  16.6% {
+    background-position: 33.33%, 0; }
+  33.3% {
+    background-position: 66.66%, 0; }
+  50% {
+    background-position: 16.66%, 0; }
+  66.6% {
+    background-position: 50%, 0; }
+  83.3% {
+    background-position: 0%, 0; } }
+
+@keyframes beat {
+  0% {
+    opacity: 1; }
+  35% {
+    opacity: 1; }
+  45% {
+    opacity: 0.3; }
+  60% {
+    opacity: 1; }
+  100% {
+    opacity: 1; } }
+
+@keyframes travel {
+  0% {
+    background-position: -380px 0; }
+  100% {
+    background-position: 380px 0; } }
